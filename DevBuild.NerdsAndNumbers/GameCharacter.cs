@@ -10,6 +10,7 @@ namespace DevBuild.NerdsAndNumbers {
         public int      HitPoints { get; set; } = 10;
         public int      Strength { get; set; }
         public int      Intelligence { get; set; }
+        public string   AttackVictoryAction { get; set; }
 
         public GameCharacter(string characterName, int startingStrength, int startingIntelligence) {
             Name = characterName;
@@ -31,6 +32,7 @@ namespace DevBuild.NerdsAndNumbers {
         public Warrior(string characterName, int startingStrength, int startingIntelligence, string weapon) : 
                         base(characterName, startingStrength, startingIntelligence) {
             WeaponType = weapon;
+            AttackVictoryAction = $" uses {WeaponType} to completely level ";
         }
 
         public override void Play() {
@@ -45,6 +47,7 @@ namespace DevBuild.NerdsAndNumbers {
         public MagicUsingCharacter( string characterName, int startingStrength, int startingIntelligence, int startingMagicalEnergy) : 
                                         base(characterName, startingStrength, startingIntelligence) {
             MagicalEnergy = startingMagicalEnergy;
+            AttackVictoryAction = $" uses all {MagicalEnergy} points of magical energy to barbecue ";
         }
 
         public override void Play() {
@@ -58,6 +61,7 @@ namespace DevBuild.NerdsAndNumbers {
         public Wizard(string characterName, int startingStrength, int startingIntelligence, int startingMagicalEnergy, int startingSpellNumber) : 
                         base(characterName, startingStrength, startingIntelligence, startingMagicalEnergy) {
             SpellNumber = startingSpellNumber;
+            AttackVictoryAction = $" uses spell number {SpellNumber} to atomize ";
         }
 
         public override void Play() {

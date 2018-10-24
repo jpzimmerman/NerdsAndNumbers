@@ -20,6 +20,8 @@ namespace DevBuild.NerdsAndNumbers {
                 Console.WriteLine();
             }
 
+            SimpleCombat.Fight(gameCharacters);
+
             while (true) { }
         }
     }
